@@ -16,6 +16,8 @@ class IndexForm(forms.Form):
     bmi = forms.IntegerField(
         label='BMI',
         required=True,
+        min_value=9,
+        max_value=50,
     )
     gender = forms.ChoiceField(
         label='Gender',
@@ -29,4 +31,6 @@ class IndexForm(forms.Form):
     age = forms.IntegerField(
         label='Age',
         required=True,
+        min_value=1,
+        max_value=120,
     )
