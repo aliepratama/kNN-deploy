@@ -1,0 +1,7 @@
+<h1>Diabetes Prediction</h1>
+<p>Check your diabetes status in below!</p>
+<form action="/result/" method="POST">
+    {% csrf_token %}
+    {{ form }}
+    <input type="submit" value="Submit" />
+</form>
