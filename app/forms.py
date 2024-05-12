@@ -1,23 +1,38 @@
 from django import forms
 
 class IndexForm(forms.Form):
-    high_bp = forms.BooleanField(
+    high_bp = forms.ChoiceField(
         label='High Blood Pressure',
-        required=False,
+        widget=forms.RadioSelect,
+        choices=[
+            ('N', 'No'),
+            ('Y', 'Yes'),
+        ],
+        required=True,
     )
-    high_chol = forms.BooleanField(
+    high_chol = forms.ChoiceField(
         label='High Cholesterol',
-        required=False,
+        widget=forms.RadioSelect,
+        choices=[
+            ('N', 'No'),
+            ('Y', 'Yes'),
+        ],
+        required=True,
     )
-    chol_check = forms.BooleanField(
+    chol_check = forms.ChoiceField(
         label='Checked cholesterol in last 5 years?',
-        required=False,
+        widget=forms.RadioSelect,
+        choices=[
+            ('N', 'No'),
+            ('Y', 'Yes'),
+        ],
+        required=True,
     )
     bmi = forms.IntegerField(
         label='BMI',
         required=True,
         min_value=9,
-        max_value=50,
+        max_value=100,
     )
     gender = forms.ChoiceField(
         label='Gender',
